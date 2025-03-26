@@ -1,0 +1,34 @@
+<div class="login-container">
+  <div class="login-card">
+    <!-- <div class="logo-box">
+      <div class="jb-logo">JB HI-FI</div>
+    </div> -->
+    <h1>STAFF PIN CHANGER</h1>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <div class="form-group">
+        <input
+          type="text"
+          id="employeeId"
+          formControlName="employeeId"
+          placeholder="ENTER YOUR EMPLOYEE ID"
+          [class.error]="loginForm.get('employeeId')?.invalid && loginForm.get('employeeId')?.touched"
+        >
+        @if (loginForm.get('employeeId')?.invalid && loginForm.get('employeeId')?.touched) {
+          <div class="error-message">Employee ID is required</div>
+        }
+      </div>
+
+      @if (errorMessage) {
+        <div class="error-message">
+          {{errorMessage}}
+        </div>
+      }
+
+      <button type="submit" [disabled]="loginForm.invalid || isLoading" class="login-button">
+        <span *ngIf="!isLoading">Sign In</span>
+        <span *ngIf="isLoading" class="loader"></span>
+      </button>
+    </form>
+  </div>
+</div>

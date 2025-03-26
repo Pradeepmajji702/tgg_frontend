@@ -1,0 +1,42 @@
+create a login page component in @src in @app in @page
+
+the @login.component.html should contain only one input field for employee id and on entering the id and clicking on submit button it should navigate to the @StaffPinChangerComponent 
+
+
+
+
+create a new component named staff pin changer in @page and it should contain the following details as in the image
+
+
+create a new component named staff pin changer in @page and it should contain the following details as in the image
+
+
+
+@staff-pin-changer.component.html  each staff member will have a level value , on selecting the staff from the dropdown if the staff selected has a level less than 3 the manager checkbox should be disabled 
+
+
+
+@staff-pin-changer.component.html  dont display the level at any place in the ui
+
+
+
+@staff-pin-changer.component.html if the level is equal or greater than 3 , then a random 5 digit pin generator should be displayed by the side of the manager , on clicking on it , a random 5 digit pin should be generated and it should be displayed in the enter new staff pin input field 
+
+
+
+update @staff-pin-changer.component.html ,if the level of the staff is below 3 , then you are allowed to enter only 4 digits and if the level is equal to or greater than 3 then you are allowed to enter only 5 digits .
+warning message should be displayed if it is over ridden
+
+
+
+@staff-pin-changer.component.html all the details should come at center 
+
+
+
+update @staff-pin-changer.component.html move choose staff,enter new staff pin , manager pin authorisation to the left of the div and move 57014 id to the right of the div 
+
+
+
+@staff-pin-changer.component.html make the date in the header dynamic and it should change according to the current date
+
+
