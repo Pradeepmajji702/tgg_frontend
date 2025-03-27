@@ -3,7 +3,7 @@
     <div class="logo-box">
       <img src="assets/image.jpg" alt="JB HI-FI Logo" class="jb-logo">
     </div>
-    <h1>STAFF PIN CHANGER : {{ currentDate | date: 'd MMMM y' }}</h1>
+    <h1>STAFF PIN CHANGER : {{ currentDate | date: 'd_MMMM_y' }}</h1>
     <form [formGroup]="pinChangeForm" class="pin-changer-form">
 
       <div class="form-group">
@@ -25,7 +25,7 @@
         <div class="staff-id">{{getSelectedStaffId()}}</div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group" style="margin-top: -21px;">
         <label for="newPin">Enter New Staff PIN</label>
         <div class="input-container">
           <input type="number"
@@ -55,6 +55,10 @@
             {{ getPinErrorMessage() }}
           </div>
         }
+          @else {
+            <div class="error-message"> <!-- Fixed height when no error -->
+            </div>
+            }
       </div>
 
       <div class="form-group">
@@ -84,6 +88,10 @@
       @if (apiMessage) {
         <div class="api-message" [class.error]="isError" [class.success]="!isError">
           {{apiMessage}}
+        </div>
+      }
+      @else {
+        <div class="api-message">
         </div>
       }
     </form>

@@ -14,14 +14,15 @@
           placeholder="ENTER YOUR EMPLOYEE ID"
           [class.error]="loginForm.get('employeeId')?.invalid && loginForm.get('employeeId')?.touched"
         >
-        @if (loginForm.get('employeeId')?.invalid && loginForm.get('employeeId')?.touched) {
-          <div class="error-message">Employee ID is required</div>
-        }
       </div>
 
       @if (errorMessage) {
         <div class="error-message">
           {{errorMessage}}
+        </div>
+      }
+      @else {
+        <div class="error-message">
         </div>
       }
 

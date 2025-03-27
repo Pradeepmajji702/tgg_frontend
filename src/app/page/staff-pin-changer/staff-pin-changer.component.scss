@@ -52,6 +52,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-height: 300px;
 }
 
 .form-group {
@@ -74,6 +75,8 @@ h1 {
 
 .select-container {
   width: 100%;
+  min-height: 20px;
+  max-height: 20px;
 }
 
 select, input {
@@ -155,11 +158,14 @@ input[type="number"] {
 
 
 .staff-id {
-  font-size: 19px;
+  font-size: 16px;
   color: #666;
   margin-left: 420px;
-  /* grid-column: 3; */
-  margin-bottom: -30px;
+  font-family:  Arial, sans-serif;
+  margin-bottom: 10px;
+  min-height: 10px;
+  max-height: 10px;
+  margin-top: 20px;
 }
 
 .pin-generator {
@@ -256,10 +262,12 @@ input[type="number"] {
 
 .error-message {
   color: #FF0000;
-  font-size: 14px;
+  font-size: 11px;
   grid-column: 2;
   margin-top: 4px;
   margin-bottom: -15px;
+  min-height: 20px;
+  max-height: 20px;
 }
 
 .api-message {
@@ -270,17 +278,20 @@ input[type="number"] {
   text-align: center;
   font-family: Arial, sans-serif;
   font-size: 14px;
+  min-height: 20px;
+  max-height: 20px;
+  border: none;
 
   &.error {
     background-color: rgba(255, 0, 0, 0.1);
     color: #FF0000;
-    border: 1px solid #FF0000;
+    border: 0px solid #FF0000;
   }
 
   &.success {
     background-color: rgba(0, 128, 0, 0.1);
     color: #008000;
-    border: 1px solid #008000;
+    border: 0px solid #008000;
   }
 }
 
