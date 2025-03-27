@@ -41,13 +41,21 @@ export class LoginComponent {
       this.employeeService.getEmployeeById(employeeId).subscribe({
         next: (employee: Employee) => {
           // Store only empId and pin
+          //  debugger
           const storedData: StoredEmployeeData = {
             empId: employee.empId,
             pin: employee.pin
           };
+          if(employee.role.level>=3){
           sessionStorage.setItem('employeeData', JSON.stringify(storedData));
           localStorage.setItem('managerId', JSON.stringify(employee.empId));
+          localStorage.setItem('level',JSON.stringify(employee.role.level));
           this.router.navigate(['/staff-pin-changer']);
+          }
+          else{
+           this.errorMessage = 'Please login as a Manager';
+            this.isLoading = false;
+          }
         },
         error: (error) => {
           console.error('Login error:', error);

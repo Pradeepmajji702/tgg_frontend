@@ -18,25 +18,28 @@
 }
 
 .logo-box {
-  background: #FFE600;
-  padding: 8px 20px;
+  // background: #FFE600;
+  // padding: 8px 20px;
   margin-bottom: 30px;
   height: 60px;
   width: 336px;
-  
+  margin-left: -25px;
+
   .jb-logo {
-    color: #000000;
-    font-size: 56px;
-    font-weight: 900;
-    font-family: Arial, sans-serif;
-    letter-spacing: 1px;
-    text-align: center;
+    // color: #000000;
+    // font-size: 56px;
+    // font-weight: 900;
+    // font-family: Arial, sans-serif;
+    // letter-spacing: 1px;
+    // text-align: center;
+    height: 81px;
+    width: 350px;
   }
 }
 
 h1 {
   color: #002244;
-  font-size: 24px;
+  font-size: 22px;
   font-family: Arial, sans-serif;
   font-weight: bold;
   margin-bottom: 40px;
@@ -44,7 +47,7 @@ h1 {
 }
 
 .pin-changer-form {
-  width: 100%;
+  width: 60%;
   max-width: 700px;
   display: flex;
   flex-direction: column;
@@ -83,7 +86,7 @@ select, input {
   font-size: 16px;
   font-family: Arial, sans-serif;
   color: #333;
-  
+
   &:focus {
     outline: none;
     border-color: #002244;
@@ -102,6 +105,8 @@ select {
   background-size: 16px;
   padding-right: 40px;
   cursor: pointer;
+  max-height: 35px;
+  min-height: 35px;
 }
 
 input[type="number"] {
@@ -118,11 +123,13 @@ input[type="number"] {
   display: flex;
   align-items: center;
   gap: 20px;
-  
+
   input {
-    width: auto;
+    // width: auto;
     flex: 1;
     height: 18px;
+    max-width: 60px;
+    min-width: 60px;
   }
 }
 
@@ -141,15 +148,18 @@ input[type="number"] {
   input[type="checkbox"] {
     width: 20px;
     height: 20px;
-  }
+    margin-left: -29px;
+    margin-right: -16px;
+    }
 }
 
+
 .staff-id {
-  font-size: 22px;
+  font-size: 19px;
   color: #666;
-  margin-left: 677px;
+  margin-left: 420px;
   /* grid-column: 3; */
-  margin-top: 10px;
+  margin-bottom: -30px;
 }
 
 .pin-generator {
@@ -170,6 +180,8 @@ input[type="number"] {
     align-items: center;
     justify-content: center;
     transition: background-color 0.2s;
+    border-style: none;
+    cursor: pointer;
 
     &:hover {
       background: #FF8C00;
@@ -181,6 +193,17 @@ input[type="number"] {
       fill: #000000;
     }
   }
+}
+.refresh-icon
+{
+  cursor: pointer;
+  // background: #FFA500;
+  // background-color: white;
+
+  // &:hover {
+  //   background: #FF8C00;
+  // }
+
 }
 
 .button-group {
@@ -236,6 +259,7 @@ input[type="number"] {
   font-size: 14px;
   grid-column: 2;
   margin-top: 4px;
+  margin-bottom: -15px;
 }
 
 .api-message {

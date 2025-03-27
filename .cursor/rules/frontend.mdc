@@ -1,0 +1,122 @@
+---
+description: 
+globs: 
+---
+# Rules and Best Practices for Angular Application
+ 
+## 1. **Project Structure**
+- Follow a modular structure with **feature-based modules** (`app.module.ts`, `feature.module.ts`).
+- Maintain a **consistent folder structure** (`components/`, `services/`, `models/`, `shared/`, `guards/`, `pipes/`).
+- Use the **Angular CLI** for generating components, services, and modules (`ng generate`).
+ 
+## 2. **Component Development**
+- Follow **Single Responsibility Principle (SRP)** – each component should have only one responsibility.
+- Use `@Input()` and `@Output()` for parent-child communication.
+- Keep templates clean by moving complex logic to the component class.
+- Use **OnPush Change Detection** (`changeDetection: ChangeDetectionStrategy.OnPush`) where applicable for performance optimization.
+ 
+## 3. **Service Layer**
+- Implement **services** using `@Injectable()` to handle business logic and data management.
+- Use **dependency injection** instead of creating instances manually.
+- Keep API calls inside services and not in components.
+ 
+## 4. **State Management**
+- Use **RxJS** (`BehaviorSubject`, `Observable`) for managing local state.
+- Implement **NgRx** or **Akita** for global state management in large applications.
+- Avoid storing state in components unless necessary.
+ 
+## 5. **Routing & Navigation**
+- Use the Angular **Router Module** for navigation (`RouterModule.forRoot(routes)`).
+- Define lazy-loaded modules to optimize initial load performance.
+- Protect routes using **Route Guards** (`CanActivate`, `CanDeactivate`).
+ 
+## 6. **Forms Handling**
+- Prefer **Reactive Forms** (`FormControl`, `FormGroup`) over Template-driven forms for complex validations.
+- Use **Validators** (`Validators.required`, `Validators.minLength`) for form validation.
+- Handle form submissions properly using `submit.preventDefault()`.
+ 
+## 7. **Error Handling**
+- Implement **global error handling** using `ErrorHandler`.
+- Use **catchError** from RxJS in API calls to handle errors gracefully.
+- Show user-friendly error messages instead of exposing raw errors.
+ 
+## 8. **Performance Optimization**
+- Enable **Lazy Loading** for modules to reduce bundle size.
+- Optimize **Change Detection** by using `ChangeDetectionStrategy.OnPush`.
+- Use the **TrackBy function** with `*ngFor` to prevent unnecessary re-renders.
+- Minimize API calls using **caching strategies** (e.g., store API results in a service and reuse them).
+ 
+## 9. **Security Best Practices**
+- Sanitize user input using Angular’s **DomSanitizer** to prevent XSS attacks.
+- Use **HttpInterceptor** to manage authentication tokens securely.
+- Implement **Content Security Policy (CSP)** in production.
+- Avoid using `innerHTML` to prevent script injections.
+ 
+## 10. **Reusable UI Components**
+- Create reusable **UI components** instead of duplicating code (`shared/components` folder).
+- Use **Angular Material**, Bootstrap, or Tailwind for consistent styling.
+- Keep UI logic separate from business logic in services.
+ 
+## 11. **Testing Best Practices**
+- Use **Jasmine/Karma** for unit testing components and services.
+- Write **end-to-end (E2E) tests** using Cypress or Protractor.
+- Use **Mocks and Spies** (`spyOn(service, 'method')`) to isolate unit tests.
+- Maintain a test coverage of at least **80%**.
+ 
+## 12. **API Communication**
+- Use **HttpClientModule** for all HTTP requests.
+- Implement **Interceptors** for authentication and logging.
+- Use **retry** strategies for failed API calls (`retry(3)`, `catchError()`).
+- Handle API subscriptions properly and unsubscribe when necessary (`ngOnDestroy`).
+ 
+## 13. **Internationalization (i18n) & Localization**
+- Use **Angular i18n** for supporting multiple languages.
+- Keep translations in JSON files and load them dynamically.
+- Avoid hardcoding text in templates; use translation keys instead.
+ 
+## 14. **Linting & Code Quality**
+- Follow **Angular Style Guide** for naming conventions (`camelCase`, `PascalCase` for classes).
+- Use **ESLint** or **TSLint** for enforcing coding standards.
+- Run `ng lint` regularly to identify and fix issues.
+- Format code using **Prettier** or **Husky hooks**.
+ 
+## 15. **Build & Deployment Best Practices**
+- Use `ng build --prod` to generate an optimized production build.
+- Enable **AOT (Ahead of Time Compilation)** for better performance.
+- Use **environment.ts** to manage environment-specific settings.
+- Deploy using **CI/CD pipelines** (GitHub Actions, Jenkins, GitLab CI/CD).
+ 
+## 16. **Lazy Loading & Module Optimization**
+- Split the app into **feature modules** and load them lazily.
+- Use **webpack bundle analyzer** to check and optimize bundle size.
+- Optimize large **third-party libraries** by importing only required modules.
+ 
+## 17. **Event Handling & Observables**
+- Use **RxJS Observables** instead of Promises for API calls.
+- Use `takeUntil` or `async pipe` to prevent memory leaks in subscriptions.
+- Avoid deeply nested subscriptions; use operators like `switchMap`, `mergeMap`.
+ 
+## 18. **Progressive Web App (PWA) Considerations**
+- Enable **Service Workers** using `ng add @angular/pwa`.
+- Implement **caching strategies** for offline support.
+- Optimize assets using lazy loading and efficient image formats.
+ 
+## 19. **Accessibility (A11Y) Best Practices**
+- Use **ARIA roles** to improve screen reader support.
+- Ensure keyboard navigability and focus management.
+- Provide proper contrast and color schemes for visibility.
+ 
+## 20. **Versioning & Backward Compatibility**
+- Use **Semantic Versioning (semver.org)**.
+- Maintain **backward compatibility** for public-facing APIs.
+- Deprecate old features gracefully with migration documentation.
+ 
+## 21. **Graceful Shutdown & Lifecycle Management**
+- Use `ngOnDestroy()` to clean up subscriptions and resources.
+- Implement **unsubscribe** strategies for event-based logic.
+- Ensure proper disposal of dynamically created components.
+ 
+---
+By following these best practices, your Angular application will be **maintainable, scalable, and high-performing** while ensuring security, performance, and accessibility. Keep refining the architecture as your application grows! 🚀
+ 
+ 
